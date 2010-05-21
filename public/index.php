@@ -52,7 +52,7 @@ define('SYS_ROOT', APP_ROOT.DS.'system');
  * error display. You can turn off sliMVC's errors using the
  * 'core.display_errors' config setting.
  */
-ini_set('display_errors');
+ini_set('display_errors', '1');
 
 ###                                                                          ###
 ###    DO NOT EDIT BELOW HERE UNLESS YOU FULLY UNDERSTAND THE IMPLICATIONS   ###
