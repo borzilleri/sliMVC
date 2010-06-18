@@ -71,6 +71,12 @@ class Dispatcher {
 		if( !empty($customRoutes[$thisRoute]) ) {
 			$commandArray = explode('/', $customRoutes[$thisRoute]);
 		}
+		foreach($customRoutes as $sourceRoute => $targetRoute) {
+			if( preg_match('/'.$sourceRoute.'/', $thisRoute) ) {
+				$thisRoute = preg_replace('/'.$sourceRoute.'/', $targetRoute, $thisRoute);
+				break;
+			}
+		}
 				
 		// Finally, set our variables appropriately
 		if( empty($commandArray[0]) ) {
