@@ -253,6 +253,18 @@ final class sliMVC {
 		
 		return '<ul class="backtrace">'.implode("\n", $out).'</ul>';
 	}
+	
+	public static function bootstrap() {
+		if( is_dir(sliMVC::config('core.bootstrap_dir')) ) {
+			$bootstrapFiles = scandir(sliMVC::config('core.boostrap_dir'));
+			
+			foreach($bootstrapFiles as $file) {
+				if( preg_match('/\.php$/', $file) ) {
+					require_once(sliMVC::config('core.bootstrap_dir').'/'.$file);
+				}
+			}			
+		}
+	}
 }
 
 ?>

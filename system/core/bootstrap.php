@@ -8,6 +8,7 @@ require_once(SYS_ROOT.'/core/sliMVC.php');
 set_error_handler(array('sliMVC', 'exception_handler'));
 set_exception_handler(array('sliMVC', 'exception_handler'));
 
+sliMVC::bootstrap();
 Dispatcher::dispatch();
 
 ?>
